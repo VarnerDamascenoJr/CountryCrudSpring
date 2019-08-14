@@ -5,6 +5,8 @@ import com.lessons.lessons.model.Country;
 import com.lessons.lessons.service.CountryRepository;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Optional;
+
 @RestController
 @RequestMapping("/country")
 public class CountryController {
@@ -19,5 +21,10 @@ public class CountryController {
     public Iterable<Country> allCountry(){
         return countryRepository.findAll();
     }
+    @GetMapping("/{countryId}")
+    public Optional<Country> countryById(@PathVariable("countryId") int coutryId){
+        return countryRepository.findById(coutryId);
+    }
+    
 
 }
