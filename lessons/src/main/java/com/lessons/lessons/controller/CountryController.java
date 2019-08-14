@@ -12,7 +12,7 @@ import java.util.Optional;
 public class CountryController {
   CountryRepository countryRepository;
 
-  //this part for insertion of the datas
+  //this part for insertion of the data
     @PostMapping("/add")
     public Country addCountry(@RequestBody Country country){
         return countryRepository.save(country);
@@ -22,8 +22,8 @@ public class CountryController {
         return countryRepository.findAll();
     }
     @GetMapping("/{countryId}")
-    public Optional<Country> countryById(@PathVariable("countryId") int coutryId){
-        return countryRepository.findById(coutryId);
+    public Optional<Country> countryById(@PathVariable("countryId") int countryId){
+        return countryRepository.findById(countryId);
     }
     @PutMapping("/update")
     public Country updateCountry(@RequestBody Country country){
@@ -38,3 +38,4 @@ public class CountryController {
 
 
 }
+
