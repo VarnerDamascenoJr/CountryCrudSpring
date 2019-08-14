@@ -29,7 +29,12 @@ public class CountryController {
     public Country updateCountry(@RequestBody Country country){
         return countryRepository.save(country);
     }
-    
+
+    @DeleteMapping("/{countryId}")
+    public void deleteCountry(@PathVariable("countryId") int countryId){
+        countryRepository.deleteById(countryId);
+    }
+
 
 
 }
