@@ -25,6 +25,11 @@ public class CountryController {
     public Optional<Country> countryById(@PathVariable("countryId") int coutryId){
         return countryRepository.findById(coutryId);
     }
+    @PutMapping("/update")
+    public Country updateCountry(@RequestBody Country country){
+        return countryRepository.save(country);
+    }
     
+
 
 }
